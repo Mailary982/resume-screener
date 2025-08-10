@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Screening</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9fafb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        textarea {
+            width: 90%;
+            padding: 15px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+        }
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+        .note {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="AI Logo" />
+        </div>
+        <h2>AI-Powered Resume Screening</h2>
+        <p class="note">Paste your resume text below or upload a PDF/TXT file (max 2MB)</p>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <textarea name="resume_text" rows="12" placeholder="Paste resume text here..."></textarea><br>
+            <input type="file" name="resume_file" accept=".pdf,.txt"><br>
+            <input type="submit" value="Predict Job Category">
+        </form>
+    </div>
+</body>
+</html>

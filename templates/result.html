@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .result-container {
+            background: white;
+            padding: 30px;
+            width: 450px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .category {
+            font-size: 24px;
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: 600;
+        }
+        .logo img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="logo">
+            <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="AI Logo" />
+        </div>
+        {% if prediction %}
+            <h2>Predicted Job Category</h2>
+            <div class="category">{{ prediction }}</div>
+        {% else %}
+            <h2>No resume text provided or unable to predict.</h2>
+        {% endif %}
+        <a href="{{ url_for('home') }}">Try another resume</a>
+    </div>
+</body>
+</html>
